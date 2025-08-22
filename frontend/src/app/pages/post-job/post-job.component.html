@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Post New Job</h2>
+  <form (ngSubmit)="onPostJob()">
+    <input type="text" [(ngModel)]="jobObj.title" name="title" placeholder="Job Title">
+    <textarea [(ngModel)]="jobObj.description" name="description" placeholder="Job Description"></textarea>
+    <input type="text" [(ngModel)]="jobObj.location" name="location" placeholder="Location">
+    <input type="text" [(ngModel)]="jobObj.salary" name="salary" placeholder="Salary">
+    <button type="submit">Post Job</button>
+  </form>
+</div>

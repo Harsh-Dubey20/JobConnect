@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Edit Your Profile</h2>
+  <form (ngSubmit)="onSave()">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" [(ngModel)]="profileObj.name" name="name" placeholder="Your Full Name">
+
+    <label for="headline">Headline</label>
+    <input type="text" id="headline" [(ngModel)]="profileObj.headline" name="headline" placeholder="e.g., Aspiring Software Developer">
+
+    <label for="skills">Skills</label>
+    <textarea id="skills" [(ngModel)]="profileObj.skills" name="skills" placeholder="e.g., Java, Angular, Spring Boot"></textarea>
+
+    <label for="resume">Upload Resume</label>
+    <input type="file" id="resume" (change)="onFileSelected($event)">
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

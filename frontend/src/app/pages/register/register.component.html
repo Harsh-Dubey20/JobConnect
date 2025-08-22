@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Register</h2>
+  <form (ngSubmit)="onRegister()">
+    <input type="text" [(ngModel)]="registerObj.name" name="name" placeholder="Name">
+    <input type="email" [(ngModel)]="registerObj.email" name="email" placeholder="Email">
+    <input type="password" [(ngModel)]="registerObj.password" name="password" placeholder="Password">
+    <button type="submit">Register</button>
+  </form>
+</div>

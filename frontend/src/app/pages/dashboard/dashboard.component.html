@@ -1,0 +1,23 @@
+<div class="container">
+  <div *ngIf="loggedInUser">
+    <h2>Welcome, {{ loggedInUser.name }}!</h2>
+
+    <!-- Candidate View -->
+    <div *ngIf="loggedInUser.role === 'CANDIDATE'">
+      <h3>Your Applications</h3>
+      <div class="dashboard-card">
+        <p>You have applied to <strong>3 jobs</strong>.</p>
+        <p>Status: 2 pending, 1 reviewed.</p>
+      </div>
+    </div>
+
+    <!-- Recruiter View -->
+    <div *ngIf="loggedInUser.role === 'RECRUITER'">
+      <h3>Your Job Postings</h3>
+      <div class="dashboard-card">
+        <p>You have <strong>5 active job listings</strong>.</p>
+        <p>You have received <strong>24 new applications</strong> this week.</p>
+      </div>
+    </div>
+  </div>
+</div>

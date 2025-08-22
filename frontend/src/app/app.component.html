@@ -1,0 +1,20 @@
+<nav>
+  <div class="logo">JobConnect</div>
+  <div class="nav-links">
+    <a routerLink="/jobs">Job Listings</a>
+    <ng-container *ngIf="authService.isLoggedIn()">
+      | <a routerLink="/dashboard">Dashboard</a>
+      | <a routerLink="/edit-profile">Edit Profile</a>
+    </ng-container>
+    <a *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'RECRUITER'">
+      | <a routerLink="/post-job">Post a Job</a>
+    </a>
+    <ng-container *ngIf="!authService.isLoggedIn()">
+      | <a routerLink="/login">Login</a>
+      | <a routerLink="/register">Register</a>
+    </ng-container>
+    <button *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
